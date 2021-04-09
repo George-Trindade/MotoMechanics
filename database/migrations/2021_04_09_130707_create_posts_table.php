@@ -9,6 +9,7 @@ class CreatePostsTable extends Migration
     /**
      * Run the migrations.
      *
+     * 
      * @return void
      */
     public function up()
@@ -17,6 +18,8 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->string("title",120);
             $table->text("content");
+            $table->string("Name");
+            $table>int("Idade");
             $table->timestamps();
         });
     }

@@ -19,7 +19,6 @@ class CreatePostsTable extends Migration
             $table->string("title",120);
             $table->text("content");
             $table->string("Name");
-            $table>int("Idade");
             $table->timestamps();
         });
     }

@@ -14,8 +14,8 @@ class PostController extends Controller
     public function create(){
         return view('admin.posts.create');
     }
-    public function store(Request $request){
+    public function store(StoreUpdatePost $request){
         $post= Post::create($request->all());
-        return 'ok';
+        return redirect()->route('posts.index');
     }
 }

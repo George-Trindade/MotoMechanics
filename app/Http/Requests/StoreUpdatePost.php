@@ -25,7 +25,7 @@ class StoreUpdatePost extends FormRequest
     {
         return [
             'title'=>'required|min:5|max:30',
-            'content'=>'required|min:50|max:200',
+            'content'=>'required|min:10|max:200',
         ];
     }
     public function messages()

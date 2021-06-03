@@ -10,8 +10,11 @@ class PageController extends Controller
     public function dashboard(){
         return view('admin.site.examples.dashboard');
     }
-    public function icons(){
-        return view('admin.site.examples.icons');
+    public function orcamento(){
+        return view('admin.site.examples.orcamento');
+    }
+    public function agendamento(){
+        return view('admin.site.examples.agendamento');
     }
     
 }

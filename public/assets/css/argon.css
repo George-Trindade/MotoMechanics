@@ -3289,6 +3289,7 @@ textarea.form-control
 
 .btn
 {
+    text-align: center;
     font-size: .875rem;
     font-weight: 600;
     line-height: 1.5;

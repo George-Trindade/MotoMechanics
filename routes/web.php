@@ -20,4 +20,6 @@ Route::get('/', function () {
 Route::post('/');
 Route::get('/site/examples/login',[PageController::class,'login'])->name('site.login');
 Route::get('/site/examples/dashboard',[PageController::class,'dashboard'])->name('site.dashboard');
-Route::get('/site/examples/icons',[PageController::class,'icons'])->name('site.icons');
+Route::get('/site/examples/orcamento',[PageController::class,'orcamento'])->name('site.orcamento');
+Route::get('/site/examples/agendamento',[PageController::class,'agendamento'])->name('site.agendamento');
+

@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\{
-    PostController};
+    PostController,
+    PageController};
 use Illuminate\Support\Facades\Route;
 
 Route::put('/posts/edit/{id}',[PostController::class,'update'])->name('posts.update');
@@ -17,3 +18,6 @@ Route::get('/', function () {
 });
 
 Route::post('/');
+Route::get('/site/examples/login',[PageController::class,'login'])->name('site.login');
+Route::get('/site/examples/dashboard',[PageController::class,'dashboard'])->name('site.dashboard');
+Route::get('/site/examples/icons',[PageController::class,'icons'])->name('site.icons');

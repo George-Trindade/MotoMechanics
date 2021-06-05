@@ -36,13 +36,13 @@
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" href="dashboard.html">
+              <a class="nav-link active" href="{{route('site.dashboard') }}">
                 <i class="ni ni-tv-2 text-primary"></i>
                 <span class="nav-link-text">Dashboard</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{route('site.agendamento') }}">
+              <a class="nav-link" href="{{route('site.listagenda') }}">
                 <i class="ni ni-calendar-grid-58   text-orange"></i>
                 <span class="nav-link-text">Agendamento</span>
               </a>

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
   <meta name="author" content="Creative Tim">
-  <title>Pagina Inicial</title>
+  <title>Agendamento</title>
   <!-- Favicon -->
   <link rel="icon" href="http://aula.test/assets/img/motocicleta.png" type="image/png">
   <!-- Fonts -->
@@ -37,13 +37,13 @@
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" href="{{route('site.dashboard') }}">
+              <a class="nav-link" href="{{route('site.dashboard')}}">
                 <i class="ni ni-tv-2 text-primary"></i>
                 <span class="nav-link-text">Dashboard</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{route('site.listagenda') }}">
+              <a class="nav-link active" href="">
                 <i class="ni ni-calendar-grid-58   text-orange"></i>
                 <span class="nav-link-text">Agendamento</span>
               </a>
@@ -55,9 +55,9 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{route('site.orcamento') }}">
+              <a class="nav-link" href="{{ route('site.orcamento') }}">
                 <i class="ni ni-cart text-pink"></i>
-                <span class="nav-link-text">Orçamentos</span>
+                <span class="nav-link-text active">Orçamentos</span>
               </a>
             </li>
             <li class="nav-item">
@@ -77,7 +77,7 @@
   <!-- Main content -->
   <div class="main-content" id="panel">
     <!-- Topnav -->
-    <nav class="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom">
+    <nav class="navbar navbar-top navbar-expand navbar-dark bg-default border-bottom">
       <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- Search form -->
@@ -276,7 +276,7 @@
                     <img alt="Image placeholder" src="http://aula.test/assets/img/theme/team-4.jpg">
                   </span>
                   <div class="media-body  ml-2  d-none d-lg-block">
-                    <span class="mb-0 text-sm  font-weight-bold">Dilma Rousseff</span>
+                    <span class="mb-0 text-sm  font-weight-bold">John Snow</span>
                   </div>
                 </div>
               </a>
@@ -313,89 +313,113 @@
     </nav>
     <!-- Header -->
     <!-- Header -->
-    <div class="header bg-primary pb-6">
-      <div class="container-fluid">
-        <div class="header-body">
-          <div class="row align-items-center py-4">
-            <div class="col-lg-6 col-7">
-              
-            </div>
-
+    <div class="header pb-6 d-flex align-items-center" style="min-height: 500px; background-image: url(http://aula.test/assets/img/back.jpg); background-size: cover; background-position: center top;">
+      <!-- Mask -->
+      <span class="mask bg-gradient-default opacity-8"></span>
+      <!-- Header container -->
+      <div class="container-fluid d-flex align-items-center">
+        <div class="row">
+          <div class="col-lg-7 col-md-10">
+            <h1 class="display-2 text-white">Agendamento</h1>
+            <p class="text-white"style="vertical-align: inherit; width:407px"">
+              Faça um agendamento para o serviço a ser realizado:
+            </p>
           </div>
-          <!-- Card stats -->
-        
         </div>
       </div>
     </div>
     <!-- Page content -->
-    <div class="container-fluid mt--5 ">
+    <div class="container-fluid mt--9">
       <div class="row">
-        <div class="col-xl-11">
-          <div class="card bg-default">
-            <div class="card-header bg-transparent">
-              <div>
-                  <h1 class="text-light text-uppercase ls-1 mb-1 textdash" style="text-align:center;">Serviços</h1>
+        <div class="col-xl-11 order-xl-1">
+          <div class="card">
+            <div class="card-header">
+              <div class="row align-items-center">
+                <div class="col-8">
+                  <h3 class="mb-0">Preencha os campos com as informações necessárias: </h3>
+                </div>
               </div>
             </div>
-            <div class="card-body align-items-center">
-              <div class="card-body align-items-center" style="padding-right: 26px;padding-left: 47px; box-shadow: -0.5px 0 10px 0 rgb(0 0 0 / 25%);">
-              <img src="http://aula.test/assets/img/1.jpg" width="300px" height="168px">
-              <img class="img-fluid" src="http://aula.test/assets/img/relacao.jpg" width="300px" height="300px">
-              <img class="img-fluid" src="http://aula.test/assets/img/oleo.jpg" width="300px" height="300px">
-                     
-              </div>
-              <div>
-              <p>
-              <a href="" style="padding-left: 138px;">Troca de Pneu</a>
-              <a href="" style="padding-left: 177px;">Troca de Relação</a>
-              <a href="" style=" text-align: right;padding-left: 199px;">Troca de Óleo</a>
-              </p>
-               
-            </div>    
-              <div class="card-body"style="padding-left: 45px; box-shadow: -0.5px 0 10px 0 rgb(0 0 0 / 25%)";>
-              <img src="http://aula.test/assets/img/1.jpg" width="300px" height="168px">
-              <img class="img-fluid" src="http://aula.test/assets/img/relacao.jpg" width="300px" height="300px">
-              <img class="img-fluid" src="http://aula.test/assets/img/oleo.jpg" width="300px" height="300px">
-            </div>
-            <div>
-              <p>
-              <a href="" style="padding-left: 156px;">Troca de Pneu</a>
-              <a href="" style="padding-left: 168px;">Troca de Relação</a>
-              <a href="" style=" text-align: right;padding-left: 213px;">Troca de Óleo</a>
-              </p>
-               
-              </div> 
+            <div class="card-body">
+              <form action="{{route('site.update',$agendas->id)}}" method="post">
+                @method("put")
+                @csrf
+                <h6 class="heading-small text-muted mb-4">Informações do veículo</h6>
+                <div class="pl-lg-4">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-username">Modelo</label>
+                        <input type="text" name="Nome" id="Nome" class="form-control" placeholder="Fan 150" value="{{$agendas->Nome}}">
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label">Marca</label>
+                        <input type="text" name="Marca" id="Marca" class="form-control" placeholder="Honda" value="{{$agendas->Marca}}">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label">Ano</label>
+                        <input type="text" name="Ano" id="Ano" class="form-control" placeholder="2014" value="{{$agendas->Ano}}">
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-last-name">Cor</label>
+                        <input type="text" name="Cor" id="Cor" class="form-control" placeholder="Azul" value="{{$agendas->Cor}}">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr class="my-4" />
+                <!-- Address -->
+                <h6 class="heading-small text-muted mb-4">Solicitação</h6>
+                <div class="pl-lg-4">
+                <div class="form-group">
+                      <label for="example-date-input" class="form-control-label">Data</label>
+                      <input class="form-control" type="date" name="Data" value="{{$agendas->Data}}" id="Data">
+                </div>
+                <div class="form-group">
+                      <label for="exampleFormControlSelect1">Horário</label>
+                      <select class="form-control" id="Horario" name="Horario" value="{{$agendas->Horario}}">
+                        <option>10:00</option>
+                        <option>16:00</option>
+                        <option>08:00</option>
+                      </select>
+                    </div>
+                <div class="row">
+                    <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="exampleFormControlSelect1">Serviços</label>
+                      <select class="form-control" id="Servico" name="Servico" value="{{$agendas->Servico}}">
+                        <option>Troca de óleo</option>
+                        <option>Troca de relação</option>
+                        <option>Troca de pneu</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-city">Descrição do problema</label>
+                        <textarea rows="4" class="form-control" name="Descricao" id="Descricao" placeholder="Coroa Desgastada">{{$agendas->Descricao}}</textarea>
+                      </div>
+                    </div>
+                  
+
+                </div>
+                <button type="submit" class="btn btn-default" style="padding-left: 20px; left: 400px;">Enviar</button>
+              </form>
             </div>
           </div>
         </div>
       </div>
-      
       <!-- Footer -->
-      <footer class="footer pt-0">
-        <div class="row align-items-center justify-content-lg-between">
-          <div class="col-lg-6">
-            <div class="copyright text-center  text-lg-left  text-muted">
-              &copy; 2020 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Creative Tim</a>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-              <li class="nav-item">
-                <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Creative Tim</a>
-              </li>
-              <li class="nav-item">
-                <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Blog</a>
-              </li>
-              <li class="nav-item">
-                <a href="https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md" class="nav-link" target="_blank">MIT License</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </footer>
+      
     </div>
   </div>
   <!-- Argon Scripts -->
@@ -405,9 +429,6 @@
   <script src="http://aula.test/assets/vendor/js-cookie/js.cookie.js"></script>
   <script src="http://aula.test/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
   <script src="http://aula.test/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
-  <!-- Optional JS -->
-  <script src="http://aula.test/assets/vendor/chart.js/dist/Chart.min.js"></script>
-  <script src="http://aula.test/assets/vendor/chart.js/dist/Chart.extension.js"></script>
   <!-- Argon JS -->
   <script src="http://aula.test/assets/js/argon.js?v=1.2.0"></script>
 </body>

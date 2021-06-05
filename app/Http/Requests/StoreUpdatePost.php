@@ -24,8 +24,7 @@ class StoreUpdatePost extends FormRequest
     public function rules()
     {
         return [
-            'title'=>'required|min:5|max:30',
-            'content'=>'required|min:10|max:200',
+            
         ];
     }
     public function messages()

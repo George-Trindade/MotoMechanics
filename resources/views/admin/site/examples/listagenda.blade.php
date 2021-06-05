@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
   <meta name="author" content="Creative Tim">
-  <title>Pagina Inicial</title>
+  <title>Meus agendamentos</title>
   <!-- Favicon -->
   <link rel="icon" href="http://aula.test/assets/img/motocicleta.png" type="image/png">
   <!-- Fonts -->
@@ -15,7 +15,6 @@
   <!-- Icons -->
   <link rel="stylesheet" href="http://aula.test/assets/vendor/nucleo/css/nucleo.css" type="text/css">
   <link rel="stylesheet" href="http://aula.test/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
-  <!-- Page plugins -->
   <!-- Argon CSS -->
   <link rel="stylesheet" href="http://aula.test/assets/css/argon.css?v=1.2.0" type="text/css">
 </head>
@@ -276,7 +275,7 @@
                     <img alt="Image placeholder" src="http://aula.test/assets/img/theme/team-4.jpg">
                   </span>
                   <div class="media-body  ml-2  d-none d-lg-block">
-                    <span class="mb-0 text-sm  font-weight-bold">Dilma Rousseff</span>
+                    <span class="mb-0 text-sm  font-weight-bold">John Snow</span>
                   </div>
                 </div>
               </a>
@@ -318,53 +317,110 @@
         <div class="header-body">
           <div class="row align-items-center py-4">
             <div class="col-lg-6 col-7">
+              <h3 class="h2 text-white d-inline-block mb-0">Meus Agendamentos</h6>
               
             </div>
-
+            
           </div>
-          <!-- Card stats -->
-        
         </div>
       </div>
     </div>
     <!-- Page content -->
-    <div class="container-fluid mt--5 ">
+    <div class="container-fluid mt--6">
       <div class="row">
-        <div class="col-xl-11">
-          <div class="card bg-default">
-            <div class="card-header bg-transparent">
-              <div>
-                  <h1 class="text-light text-uppercase ls-1 mb-1 textdash" style="text-align:center;">Serviços</h1>
-              </div>
+        <div class="col">
+          <div class="card">
+            <!-- Card header -->
+            <div class="card-header border-0">
+              <h3 class="mb-0">Registros</h3>
             </div>
-            <div class="card-body align-items-center">
-              <div class="card-body align-items-center" style="padding-right: 26px;padding-left: 47px; box-shadow: -0.5px 0 10px 0 rgb(0 0 0 / 25%);">
-              <img src="http://aula.test/assets/img/1.jpg" width="300px" height="168px">
-              <img class="img-fluid" src="http://aula.test/assets/img/relacao.jpg" width="300px" height="300px">
-              <img class="img-fluid" src="http://aula.test/assets/img/oleo.jpg" width="300px" height="300px">
-                     
-              </div>
-              <div>
-              <p>
-              <a href="" style="padding-left: 138px;">Troca de Pneu</a>
-              <a href="" style="padding-left: 177px;">Troca de Relação</a>
-              <a href="" style=" text-align: right;padding-left: 199px;">Troca de Óleo</a>
-              </p>
-               
-            </div>    
-              <div class="card-body"style="padding-left: 45px; box-shadow: -0.5px 0 10px 0 rgb(0 0 0 / 25%)";>
-              <img src="http://aula.test/assets/img/1.jpg" width="300px" height="168px">
-              <img class="img-fluid" src="http://aula.test/assets/img/relacao.jpg" width="300px" height="300px">
-              <img class="img-fluid" src="http://aula.test/assets/img/oleo.jpg" width="300px" height="300px">
+            <!-- Light table -->
+            <div class="table-responsive">
+              <table class="table align-items-center table-flush">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col" class="sort" data-sort="name">Serviço</th>
+                    <th scope="col" class="sort" data-sort="budget">Data</th>
+                    <th scope="col" class="sort" data-sort="status">Horário</th>
+                    <th scope="col">Veículo</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody class="list">
+                @foreach($agendas as $agenda)
+                  <tr>
+                    <th scope="row">
+                      <div class="media align-items-center">
+                        <div class="media-body">
+                          <span class="name mb-0 text-sm">{{$agenda->Servico}}</span>
+                        </div>
+                      </div>
+                    </th>
+                    <td class="budget">
+                      {{$agenda->Data}}
+                    </td>
+                    <td>
+                      <span class="badge badge-dot mr-4">
+                        <i class="bg-warning"></i>
+                        <span class="status">{{$agenda->Horario}}</span>
+                      </span>
+                    </td>
+                    <td class="budget">
+                      {{$agenda->Nome}}
+                    </td>
+                    <td>
+                    <a href="{{ route('site.editagenda', $agenda->id )}}">
+                      <button class="btn btn-icon btn-primary" type="submit">
+                        <span class="btn-inner--icon">Alterar<i class="ni ni-ruler-pencil"></i></span>
+                     </button>
+                    </a>
+                    </td>
+                    <td>
+                     <form action="{{route('site.destroy', $agenda->id)}}" method="post">
+                     @csrf
+                    <input type="hidden" name="_method" value="DELETE">   
+                     <button class="btn btn-icon btn-primary" type="submit">
+                            <span class="btn-inner--icon">Remover<i class="ni ni-fat-remove"></i></span>
+                      </button>
+                    </form>
+                    </td>
+                  <tr>
+                  @endforeach
+                </tbody>
+              </table>
             </div>
-            <div>
-              <p>
-              <a href="" style="padding-left: 156px;">Troca de Pneu</a>
-              <a href="" style="padding-left: 168px;">Troca de Relação</a>
-              <a href="" style=" text-align: right;padding-left: 213px;">Troca de Óleo</a>
-              </p>
-               
-              </div> 
+
+            <!-- Card footer -->
+            <div class="card-footer py-4">
+           
+              <nav aria-label="...">
+                <ul class="pagination justify-content-end mb-0">
+                <a href="{{ route('site.agendamento') }}">
+                <button class="btn btn-icon btn-primary" type="button">
+                    <span class="btn-inner--icon">Novo Agendamento<i class="ni ni-fat-add"></i></span>
+                </button></a>
+                  <li class="page-item disabled"style="padding-left: 215px;">
+                    <a class="page-link" href="#" tabindex="-1">
+                      <i class="fas fa-angle-left"></i>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                  </li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">
+                      <i class="fas fa-angle-right"></i>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
             </div>
           </div>
         </div>
@@ -405,9 +461,6 @@
   <script src="http://aula.test/assets/vendor/js-cookie/js.cookie.js"></script>
   <script src="http://aula.test/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
   <script src="http://aula.test/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
-  <!-- Optional JS -->
-  <script src="http://aula.test/assets/vendor/chart.js/dist/Chart.min.js"></script>
-  <script src="http://aula.test/assets/vendor/chart.js/dist/Chart.extension.js"></script>
   <!-- Argon JS -->
   <script src="http://aula.test/assets/js/argon.js?v=1.2.0"></script>
 </body>

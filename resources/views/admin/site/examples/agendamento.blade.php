@@ -43,13 +43,13 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">
+              <a class="nav-link active" href="">
                 <i class="ni ni-calendar-grid-58   text-orange"></i>
                 <span class="nav-link-text">Agendamento</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="tables.html">
+              <a class="nav-link" href="{{route('site.meusservicos')}}">
                 <i class="ni ni-bullet-list-67 text-default"></i>
                 <span class="nav-link-text">Meus Serviços</span>
               </a>
@@ -341,20 +341,21 @@
               </div>
             </div>
             <div class="card-body">
-              <form>
+              <form action="{{route('site.store')}}" method="post">
+                <input type="hidden" name="_token" value="{{csrf_token()}}">
                 <h6 class="heading-small text-muted mb-4">Informações do veículo</h6>
                 <div class="pl-lg-4">
                   <div class="row">
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-username">Modelo</label>
-                        <input type="text" id="input-username" class="form-control" placeholder="Fan 150" value="">
+                        <input type="text" name="Nome" id="Nome" class="form-control" placeholder="Fan 150" value="{{old('Nome')}}">
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label">Marca</label>
-                        <input type="text" id="input-email" class="form-control" placeholder="Honda" value="">
+                        <input type="text" name="Marca" id="Marca" class="form-control" placeholder="Honda" value="{{old('Marca')}}">
                       </div>
                     </div>
                   </div>
@@ -362,13 +363,13 @@
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label">Ano</label>
-                        <input type="text" id="input-first-name" class="form-control" placeholder="2014" value="">
+                        <input type="text" name="Ano" id="Ano" class="form-control" placeholder="2014" value="{{old('Ano')}}">
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-last-name">Cor</label>
-                        <input type="text" id="input-last-name" class="form-control" placeholder="Azul" value="">
+                        <input type="text" name="Cor" id="Cor" class="form-control" placeholder="Azul" value="{{old('Cor')}}">
                       </div>
                     </div>
                   </div>
@@ -379,11 +380,11 @@
                 <div class="pl-lg-4">
                 <div class="form-group">
                       <label for="example-date-input" class="form-control-label">Data</label>
-                      <input class="form-control" type="date" value="2018-11-23" id="example-date-input">
+                      <input class="form-control" type="date" name="Data" value="{{old('Data')}}" id="Data">
                 </div>
                 <div class="form-group">
                       <label for="exampleFormControlSelect1">Horário</label>
-                      <select class="form-control" id="exampleFormControlSelect1">
+                      <select class="form-control" id="Horario" name="Horario" value="{{old('Horario')}}">
                         <option>10:00</option>
                         <option>16:00</option>
                         <option>08:00</option>
@@ -393,7 +394,7 @@
                     <div class="col-md-12">
                     <div class="form-group">
                       <label for="exampleFormControlSelect1">Serviços</label>
-                      <select class="form-control" id="exampleFormControlSelect1">
+                      <select class="form-control" id="Servico" name="Servico" value="{{old('Servico')}}">
                         <option>Troca de óleo</option>
                         <option>Troca de relação</option>
                         <option>Troca de pneu</option>
@@ -404,7 +405,7 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label class="form-control-label" for="input-city">Descrição do problema</label>
-                        <textarea rows="4" class="form-control" placeholder="Coroa Desgastada"></textarea>
+                        <textarea rows="4" class="form-control" name="Descricao" id="Descricao" placeholder="Coroa Desgastada">{{old('Descricao')}}</textarea>
                       </div>
                     </div>
                   

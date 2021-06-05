@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Page;
 use Illuminate\Http\Request;
+use App\Models\Agenda;
 
-class PageController extends Controller
+
+class AgendaController extends Controller
 {
     public function login(){
         return view('admin.site.examples.login');
@@ -19,11 +20,12 @@ class PageController extends Controller
         return view('admin.site.examples.agendamento');
     }
     public function store(Request $request){
-        $pages= Page::agendamento($request->all());
-        return ok;
+        $agendas= Agenda::create($request->all());
+        return 'ok';
     }    
     
     public function meusservicos(){
         return view('admin.site.examples.meusservicos');
     }
 }
+

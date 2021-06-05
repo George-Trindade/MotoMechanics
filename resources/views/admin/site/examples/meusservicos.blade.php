@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
   <meta name="author" content="Creative Tim">
-  <title>Orçamentos</title>
+  <title>Meus Serviços</title>
   <!-- Favicon -->
   <link rel="icon" href="http://aula.test/assets/img/motocicleta.png" type="image/png">
   <!-- Fonts -->
@@ -15,7 +15,6 @@
   <!-- Icons -->
   <link rel="stylesheet" href="http://aula.test/assets/vendor/nucleo/css/nucleo.css" type="text/css">
   <link rel="stylesheet" href="http://aula.test/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
-  <!-- Page plugins -->
   <!-- Argon CSS -->
   <link rel="stylesheet" href="http://aula.test/assets/css/argon.css?v=1.2.0" type="text/css">
 </head>
@@ -37,7 +36,7 @@
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="{{route('site.dashboard')}}">
+              <a class="nav-link active" href="dashboard.html">
                 <i class="ni ni-tv-2 text-primary"></i>
                 <span class="nav-link-text">Dashboard</span>
               </a>
@@ -55,7 +54,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="{{ route('site.orcamento') }}">
+              <a class="nav-link" href="{{route('site.orcamento') }}">
                 <i class="ni ni-cart text-pink"></i>
                 <span class="nav-link-text">Orçamentos</span>
               </a>
@@ -77,7 +76,7 @@
   <!-- Main content -->
   <div class="main-content" id="panel">
     <!-- Topnav -->
-    <nav class="navbar navbar-top navbar-expand navbar-dark bg-default border-bottom">
+    <nav class="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom">
       <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- Search form -->
@@ -313,104 +312,249 @@
     </nav>
     <!-- Header -->
     <!-- Header -->
-    <div class="header pb-6 d-flex align-items-center" style="min-height: 500px; background-image: url(http://aula.test/assets/img/back.jpg); background-size: cover; background-position: center top;">
-      <!-- Mask -->
-      <span class="mask bg-gradient-default opacity-8"></span>
-      <!-- Header container -->
-      <div class="container-fluid d-flex align-items-center">
-        <div class="row">
-          <div class="col-lg-7 col-md-10">
-            <h1 class="display-2 text-white">Orçamentos</h1>
-            <p class="text-white"style="vertical-align: inherit; width:407px"">
-              Faça uma solicitação de orçamento com a nossa equipe:
-            </p>
+    <div class="header bg-primary pb-6">
+      <div class="container-fluid">
+        <div class="header-body">
+          <div class="row align-items-center py-4">
+            <div class="col-lg-6 col-7">
+              <h3 class="h2 text-white d-inline-block mb-0">Meus Serviços</h6>
+              
+            </div>
+            
           </div>
         </div>
       </div>
     </div>
     <!-- Page content -->
-    <div class="container-fluid mt--9">
+    <div class="container-fluid mt--6">
       <div class="row">
-        <div class="col-xl-11 order-xl-1">
+        <div class="col">
           <div class="card">
-            <div class="card-header">
-              <div class="row align-items-center">
-                <div class="col-8">
-                  <h3 class="mb-0"style="text-align: left;">Preencha os campos com as informações necessárias: </h3>
-                </div>
-              </div>
+            <!-- Card header -->
+            <div class="card-header border-0">
+              <h3 class="mb-0">Serviços</h3>
             </div>
-            <div class="card-body">
-              <form>
-                <h6 class="heading-small text-muted mb-4">Informações do veículo</h6>
-                <div class="pl-lg-4">
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <div class="form-group">
-                        <label class="form-control-label" for="input-username">Modelo</label>
-                        <input type="text" id="input-username" class="form-control" placeholder="Fan 150" value="">
+            <!-- Light table -->
+            <div class="table-responsive">
+              <table class="table align-items-center table-flush">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col" class="sort" data-sort="name">Serviço</th>
+                    <th scope="col" class="sort" data-sort="budget">Valor</th>
+                    <th scope="col" class="sort" data-sort="status">Status</th>
+                    <th scope="col">Veículo</th>
+                    <th scope="col" class="sort" data-sort="completion">Completado</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody class="list">
+                  <tr>
+                    <th scope="row">
+                      <div class="media align-items-center">
+                        <div class="media-body">
+                          <span class="name mb-0 text-sm">Troca de Relação</span>
+                        </div>
                       </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="form-group">
-                        <label class="form-control-label">Marca</label>
-                        <input type="text" id="input-email" class="form-control" placeholder="Honda" value="">
+                    </th>
+                    <td class="budget">
+                      $250 R$
+                    </td>
+                    <td>
+                      <span class="badge badge-dot mr-4">
+                        <i class="bg-warning"></i>
+                        <span class="status">Montando</span>
+                      </span>
+                    </td>
+                    <td class="budget">
+                      Fan 150
+                    </td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <span class="completion mr-2">60%</span>
+                        <div>
+                          <div class="progress">
+                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <div class="form-group">
-                        <label class="form-control-label">Ano</label>
-                        <input type="text" id="input-first-name" class="form-control" placeholder="2014" value="">
+                    </td>
+                    <td class="text-right">
+                      <div class="dropdown">
+                        <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="fas fa-ellipsis-v"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
                       </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="form-group">
-                        <label class="form-control-label" for="input-last-name">Cor</label>
-                        <input type="text" id="input-last-name" class="form-control" placeholder="Azul" value="">
+                    </td>
+                  </tr>
+                  <tr>
+                  <tr>
+                    <th scope="row">
+                      <div class="media align-items-center">
+                        <div class="media-body">
+                          <span class="name mb-0 text-sm">Troca de Relação</span>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                </div>
-                <hr class="my-4" />
-                <!-- Address -->
-                <h6 class="heading-small text-muted mb-4">Solicitação</h6>
-                <div class="pl-lg-4">
-                  <div class="row">
-                    <div class="col-md-12">
-                    <div class="form-group">
-                      <label for="form-control-label">Serviços</label>
-                      <select class="form-control" id="exampleFormControlSelect1">
-                        <option>Troca de óleo</option>
-                        <option>Troca de relação</option>
-                        <option>Troca de pneu</option>
-                      </select>
-                    </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <label class="form-control-label" for="input-city">Descrição do problema</label>
-                        <textarea rows="4" class="form-control" placeholder="Coroa Desgastada"></textarea>
+                    </th>
+                    <td class="budget">
+                      $250 R$
+                    </td>
+                    <td>
+                      <span class="badge badge-dot mr-4">
+                        <i class="bg-warning"></i>
+                        <span class="status">Lubrificando</span>
+                      </span>
+                    </td>
+                    <td class="budget">
+                      Titan 150
+                    </td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <span class="completion mr-2">90%</span>
+                        <div>
+                          <div class="progress">
+                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                  <label class="form-control-label">Insira fotos ou vídeos do problema</label>
-                  <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="customFileLang" lang="en">
-                      <label class="custom-file-label" for="customFileLang">Selecione o arquivo</label>
-                  </div>
-                  <div>
-                  <button type="submit" class="btn btn-default" style="padding-left: 20px; left: 400px;">Enviar</button>
-                  </div>
-                </div>
-              </form>
+                    </td>
+                    <td class="text-right">
+                      <div class="dropdown">
+                        <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="fas fa-ellipsis-v"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      <div class="media align-items-center">
+                        <div class="media-body">
+                          <span class="name mb-0 text-sm">Troca de Óleo</span>
+                        </div>
+                      </div>
+                    </th>
+                    <td class="budget">
+                      $25 R$
+                    </td>
+                    <td>
+                      <span class="badge badge-dot mr-4">
+                        <i class="bg-warning"></i>
+                        <span class="status">Oléo velho retirado</span>
+                      </span>
+                    </td>
+                    <td class="budget">
+                      CB 300
+                    </td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <span class="completion mr-2">50%</span>
+                        <div>
+                          <div class="progress">
+                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-right">
+                      <div class="dropdown">
+                        <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="fas fa-ellipsis-v"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      <div class="media align-items-center">
+                        <div class="media-body">
+                          <span class="name mb-0 text-sm">Troca de Pneu</span>
+                        </div>
+                      </div>
+                    </th>
+                    <td class="budget">
+                      $180 R$
+                    </td>
+                    <td>
+                      <span class="badge badge-dot mr-4">
+                        <i class="bg-warning"></i>
+                        <span class="status">Aguardando o Pneu</span>
+                      </span>
+                    </td>
+                    <td class="budget">
+                      Biz 125+
+                    </td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <span class="completion mr-2">0%</span>
+                        <div>
+                          <div class="progress">
+                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-right">
+                      <div class="dropdown">
+                        <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="fas fa-ellipsis-v"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- Card footer -->
+            <div class="card-footer py-4">
+              <nav aria-label="...">
+                <ul class="pagination justify-content-end mb-0">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">
+                      <i class="fas fa-angle-left"></i>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                  </li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">
+                      <i class="fas fa-angle-right"></i>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
             </div>
           </div>
         </div>
       </div>
+      
       <!-- Footer -->
       <footer class="footer pt-0">
         <div class="row align-items-center justify-content-lg-between">

@@ -60,12 +60,6 @@
                 <span class="nav-link-text">Orçamentos</span>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="map.html">
-                <i class="ni ni-world-2 text-primary"></i>
-                <span class="nav-link-text">Comentários</span>
-              </a>
-            </li>
           </ul>
           <!-- Divider -->
           <hr class="my-3">
@@ -77,7 +71,7 @@
   <!-- Main content -->
   <div class="main-content" id="panel">
     <!-- Topnav -->
-    <nav class="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom">
+    <nav class="navbar navbar-top navbar-expand navbar-dark bg-default border-bottom">
       <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- Search form -->
@@ -111,10 +105,7 @@
                 <i class="ni ni-zoom-split-in"></i>
               </a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="ni ni-bell-55"></i>
-              </a>
+            
               <div class="dropdown-menu dropdown-menu-xl  dropdown-menu-right  py-0 overflow-hidden">
                 <!-- Dropdown header -->
                 <div class="px-3 py-3">
@@ -223,9 +214,7 @@
               </div>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="ni ni-ungroup"></i>
-              </a>
+              
               <div class="dropdown-menu dropdown-menu-lg dropdown-menu-dark bg-default  dropdown-menu-right ">
                 <div class="row shortcuts px-4">
                   <a href="#!" class="col-4 shortcut-item">
@@ -313,24 +302,21 @@
     </nav>
     <!-- Header -->
     <!-- Header -->
-    <div class="header bg-primary pb-6">
+    <div class="header bg-default pb-6">
       <div class="container-fluid">
         <div class="header-body">
           <div class="row align-items-center py-4">
             <div class="col-lg-6 col-7">
-              
             </div>
-
           </div>
           <!-- Card stats -->
-        
         </div>
       </div>
     </div>
     <!-- Page content -->
-    <div class="container-fluid mt--5 ">
+    <div class="container-fluid mt--6 ">
       <div class="row">
-        <div class="col-xl-11">
+        <div class="col-xl-12">
           <div class="card bg-default">
             <div class="card-header bg-transparent">
               <div>
@@ -339,7 +325,7 @@
             </div>
             <div class="card-body align-items-center">
               <div class="card-body align-items-center" style="padding-right: 26px;padding-left: 47px; box-shadow: -0.5px 0 10px 0 rgb(0 0 0 / 25%);">
-              <img src="http://aula.test/assets/img/1.jpg" width="300px" height="168px">
+              <img class="" src="http://aula.test/assets/img/1.jpg" width="300px" height="168px">
               <img class="img-fluid" src="http://aula.test/assets/img/relacao.jpg" width="300px" height="300px">
               <img class="img-fluid" src="http://aula.test/assets/img/oleo.jpg" width="300px" height="300px">
                      
@@ -372,29 +358,6 @@
       
       <!-- Footer -->
       <footer class="footer pt-0">
-        <div class="row align-items-center justify-content-lg-between">
-          <div class="col-lg-6">
-            <div class="copyright text-center  text-lg-left  text-muted">
-              &copy; 2020 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Creative Tim</a>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-              <li class="nav-item">
-                <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Creative Tim</a>
-              </li>
-              <li class="nav-item">
-                <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Blog</a>
-              </li>
-              <li class="nav-item">
-                <a href="https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md" class="nav-link" target="_blank">MIT License</a>
-              </li>
-            </ul>
-          </div>
-        </div>
       </footer>
     </div>
   </div>

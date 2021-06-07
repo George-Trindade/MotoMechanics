@@ -12,7 +12,7 @@ Route::get('/posts/{id}',[PostController::class,'show'])->name('posts.show');
 Route::delete('/posts/{id}',[PostController::class, 'destroy'])->name('posts.destroy');
 */
 Route::get('/', function () {
-    return view('welcome');
+    return view('admin.site.examples.login');
 });
 
 Route::post('/');

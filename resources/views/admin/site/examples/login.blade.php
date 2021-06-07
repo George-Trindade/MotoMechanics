@@ -82,7 +82,7 @@
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text">
-                      <i class="material-icons">face</i>
+                      <i class="material-icons"></i>
                     </span>
                   </div>
                   <input type="text" class="form-control" placeholder="Primeiro Nome...">
@@ -90,7 +90,7 @@
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text">
-                      <i class="material-icons">mail</i>
+                      <i class="material-icons"></i>
                     </span>
                   </div>
                   <input type="email" class="form-control" placeholder="Email...">
@@ -98,14 +98,14 @@
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text">
-                      <i class="material-icons">lock_outline</i>
+                      <i class="material-icons">  </i>
                     </span>
                   </div>
                   <input type="password" class="form-control" placeholder="Senha...">
                 </div>
               </div>
               <div class="footer text-center">
-                <a href="#pablo" class="btn btn-primary btn-link btn-wd btn-lg">Entrar</a>
+                <a href="{{route('site.dashboard')}}" class="btn btn-primary btn-link btn-wd btn-lg">Entrar</a>
               </div>
             </form>
           </div>

@@ -60,12 +60,6 @@
                 <span class="nav-link-text active">Orçamentos</span>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="map.html">
-                <i class="ni ni-world-2 text-primary"></i>
-                <span class="nav-link-text">Comentários</span>
-              </a>
-            </li>
           </ul>
           <!-- Divider -->
           <hr class="my-3">

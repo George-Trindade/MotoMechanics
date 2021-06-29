@@ -164,30 +164,9 @@
               </div>
             </div>
             <div class="card-body">
-              <form action="{{route('site.storeOrca')}}" method="post">
-              <input type="hidden" name="_token" value="{{csrf_token()}}">
-                <h6 class="heading-small text-muted mb-4">Informações do veículo</h6>
-                <div class="pl-lg-4">
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <div class="form-group">
-                        <label class="form-control-label" for="input-username">Modelo</label>
-                        <select class="form-control" name="veiculo_id" id="veiculo_id" value="{{old('veiculo_id')}}">
-                        @foreach($veiculos as $veiculo)
-                          <option value="{{$veiculo->id}}">{{$veiculo->Modelo}} </option>
-                        @endforeach
-                      </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="form-group">
-                        <label class="form-control-label">Marca</label>
-                        <input type="text" id="input-email" class="form-control" placeholder="Honda" value="">
-                      </div>
-                    </div>
-                  </div>
-                  
-                </div>
-                <hr class="my-4" />
+            <form action="{{route('site.updateorcamento',$orcamento->id)}}" method="post">
+                @method("put")
+                @csrf
                 <!-- Address -->
                 <h6 class="heading-small text-muted mb-4">Solicitação</h6>
                 <div class="pl-lg-4">
@@ -195,7 +174,7 @@
                     <div class="col-md-12">
                     <div class="form-group">
                       <label for="form-control-label">Serviços</label>
-                      <select class="form-control" id="exampleFormControlSelect1"name="Servico" id="Servico" value="{{old('Servico')}}">
+                      <select class="form-control" id="exampleFormControlSelect1"name="Servico" id="Servico">{{$orcamento->Servico}}
                         <option>Troca de óleo</option>
                         <option>Troca de relação</option>
                         <option>Troca de pneu</option>
@@ -207,7 +186,7 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label class="form-control-label" for="input-city">Descrição do problema</label>
-                        <textarea rows="4" class="form-control" placeholder="Coroa Desgastada" name="Descricao" id="Descricao" value="{{old('Descricao')}}"></textarea>
+                        <textarea rows="4" class="form-control" name="Descricao" id="Descricao" >{{$orcamento->Descricao}}</textarea>
                       </div>
                     </div>
                   </div>

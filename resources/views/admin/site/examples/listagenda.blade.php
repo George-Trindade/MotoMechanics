@@ -171,36 +171,41 @@
                   </tr>
                 </thead>
                 <tbody class="list">
-                @foreach($agendas as $agenda)
+                @foreach($agendamentos as $agendamento)
                   <tr>
                     <th scope="row">
                       <div class="media align-items-center">
                         <div class="media-body">
-                          <span class="name mb-0 text-sm">{{$agenda->Servico}}</span>
+                          <span class="name mb-0 text-sm">{{$agendamento->Servico}}</span>
                         </div>
                       </div>
                     </th>
                     <td class="budget">
-                      {{$agenda->Data}}
+                      {{$agendamento->Data}}
                     </td>
                     <td>
                       <span class="badge badge-dot mr-4">
                         <i class="bg-warning"></i>
-                        <span class="status">{{$agenda->Horario}}</span>
+                        <span class="status">{{$agendamento->Horario}}</span>
                       </span>
                     </td>
+                    
                     <td class="budget">
-                      {{$agenda->Nome}}
+                     @foreach($veiculos as $veiculo)
+                       @if($agendamento->veiculo_id == $veiculo->id)
+                      {{$veiculo->Modelo}}
+                      @endif
+                    @endforeach
                     </td>
                     <td>
-                    <a href="{{ route('site.editagenda', $agenda->id )}}">
+                    <a href="{{ route('site.editagenda', $agendamento->id )}}">
                       <button class="btn btn-icon btn-primary" type="submit">
                         <span class="btn-inner--icon">Alterar<i class="ni ni-ruler-pencil"></i></span>
                      </button>
                     </a>
                     </td>
                     <td>
-                     <form action="{{route('site.destroy', $agenda->id)}}" method="post">
+                     <form action="{{route('site.destroy', $agendamento->id)}}" method="post">
                      @csrf
                     <input type="hidden" name="_method" value="DELETE">   
                      <button class="btn btn-icon btn-primary" type="submit">

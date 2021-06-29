@@ -335,7 +335,7 @@
               </div>
             </div>
             <div class="card-body">
-              <form action="{{route('site.update',$agendas->id)}}" method="post">
+              <form action="{{route('site.update',$agendamento->id)}}" method="post">
                 @method("put")
                 @csrf
                 <h6 class="heading-small text-muted mb-4">Informações do veículo</h6>
@@ -344,30 +344,20 @@
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-username">Modelo</label>
-                        <input type="text" name="Nome" id="Nome" class="form-control" placeholder="Fan 150" value="{{$agendas->Nome}}">
+                        <select class="form-control" name="veiculo_id" id="veiculo_id" value="{{old('veiculo_id')}}">
+                        @foreach($veiculos as $veiculo)
+                          <option value="{{$veiculo->id}}">{{$veiculo->Modelo}} </option>
+                        @endforeach
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label">Marca</label>
-                        <input type="text" name="Marca" id="Marca" class="form-control" placeholder="Honda" value="{{$agendas->Marca}}">
+                        <input type="text" id="input-email" class="form-control" placeholder="Honda" value="">
                       </div>
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <div class="form-group">
-                        <label class="form-control-label">Ano</label>
-                        <input type="text" name="Ano" id="Ano" class="form-control" placeholder="2014" value="{{$agendas->Ano}}">
-                      </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="form-group">
-                        <label class="form-control-label" for="input-last-name">Cor</label>
-                        <input type="text" name="Cor" id="Cor" class="form-control" placeholder="Azul" value="{{$agendas->Cor}}">
-                      </div>
-                    </div>
-                  </div>
+                  
                 </div>
                 <hr class="my-4" />
                 <!-- Address -->
@@ -375,11 +365,11 @@
                 <div class="pl-lg-4">
                 <div class="form-group">
                       <label for="example-date-input" class="form-control-label">Data</label>
-                      <input class="form-control" type="date" name="Data" value="{{$agendas->Data}}" id="Data">
+                      <input class="form-control" type="date" name="Data" value="{{$agendamento->Data}}" id="Data">
                 </div>
                 <div class="form-group">
                       <label for="exampleFormControlSelect1">Horário</label>
-                      <select class="form-control" id="Horario" name="Horario" value="{{$agendas->Horario}}">
+                      <select class="form-control" id="Horario" name="Horario" value="{{$agendamento->Horario}}">
                         <option>10:00</option>
                         <option>16:00</option>
                         <option>08:00</option>
@@ -389,7 +379,7 @@
                     <div class="col-md-12">
                     <div class="form-group">
                       <label for="exampleFormControlSelect1">Serviços</label>
-                      <select class="form-control" id="Servico" name="Servico" value="{{$agendas->Servico}}">
+                      <select class="form-control" id="Servico" name="Servico" value="{{$agendamento->Servico}}">
                         <option>Troca de óleo</option>
                         <option>Troca de relação</option>
                         <option>Troca de pneu</option>
@@ -400,7 +390,7 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label class="form-control-label" for="input-city">Descrição do problema</label>
-                        <textarea rows="4" class="form-control" name="Descricao" id="Descricao" placeholder="Coroa Desgastada">{{$agendas->Descricao}}</textarea>
+                        <textarea rows="4" class="form-control" name="Descricao" id="Descricao" placeholder="Coroa Desgastada">{{$agendamento->Descricao}}</textarea>
                       </div>
                     </div>
                   

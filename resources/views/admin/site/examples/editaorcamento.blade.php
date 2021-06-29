@@ -43,7 +43,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{route('site.agendamento') }}">
+              <a class="nav-link" href="{{route('site.listagenda') }}">
                 <i class="ni ni-calendar-grid-58   text-orange"></i>
                 <span class="nav-link-text">Agendamento</span>
               </a>
@@ -55,7 +55,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="{{ route('site.orcamento') }}">
+              <a class="nav-link active" href="{{ route('site.listaorcamento') }}">
                 <i class="ni ni-cart text-pink"></i>
                 <span class="nav-link-text">Orçamentos</span>
               </a>

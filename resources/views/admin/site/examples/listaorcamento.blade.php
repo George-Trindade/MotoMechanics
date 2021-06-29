@@ -54,7 +54,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{route('site.orcamento') }}">
+              <a class="nav-link" href="{{route('site.listaorcamento') }}">
                 <i class="ni ni-cart text-pink"></i>
                 <span class="nav-link-text">Orçamentos</span>
               </a>
@@ -195,7 +195,6 @@
                        @if($orcamento->veiculo_id == $veiculo->id)
                       {{$veiculo->Modelo}}
                       @endif
-                     
                     @endforeach
                     </td>
                     <td>

@@ -43,7 +43,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{route('site.agendamento') }}">
+              <a class="nav-link" href="{{route('site.listagenda') }}">
                 <i class="ni ni-calendar-grid-58   text-orange"></i>
                 <span class="nav-link-text">Agendamento</span>
               </a>
@@ -166,35 +166,27 @@
             <div class="card-body">
               <form action="{{route('site.storeOrca')}}" method="post">
               <input type="hidden" name="_token" value="{{csrf_token()}}">
-                <h6 class="heading-small text-muted mb-4">Informações do veículo</h6>
+              <h6 class="heading-small text-muted mb-4">Solicitação</h6>
                 <div class="pl-lg-4">
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <div class="form-group">
+                    <div class="form-group">
                         <label class="form-control-label" for="input-username">Modelo</label>
                         <select class="form-control" name="veiculo_id" id="veiculo_id" value="{{old('veiculo_id')}}">
                         @foreach($veiculos as $veiculo)
                           <option value="{{$veiculo->id}}">{{$veiculo->Modelo}} </option>
                         @endforeach
-                      </div>
+                        </select>
+                      
                     </div>
-                    <div class="col-lg-6">
-                      <div class="form-group">
-                        <label class="form-control-label">Marca</label>
-                        <input type="text" id="input-email" class="form-control" placeholder="Honda" value="">
-                      </div>
-                    </div>
-                  </div>
-                  
+                    
                 </div>
-                <hr class="my-4" />
+                
                 <!-- Address -->
-                <h6 class="heading-small text-muted mb-4">Solicitação</h6>
+                
                 <div class="pl-lg-4">
                   <div class="row">
                     <div class="col-md-12">
                     <div class="form-group">
-                      <label for="form-control-label">Serviços</label>
+                      <label class="form-control-label" for="form-control-label" >Serviços</label>
                       <select class="form-control" id="exampleFormControlSelect1"name="Servico" id="Servico" value="{{old('Servico')}}">
                         <option>Troca de óleo</option>
                         <option>Troca de relação</option>

@@ -54,7 +54,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{route('site.orcamento') }}">
+              <a class="nav-link" href="{{route('site.listaorcamento') }}">
                 <i class="ni ni-cart text-pink"></i>
                 <span class="nav-link-text">Orçamentos</span>
               </a>

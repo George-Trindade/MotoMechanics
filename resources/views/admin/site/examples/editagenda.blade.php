@@ -43,7 +43,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="">
+              <a class="nav-link active" href="{{ route('site.listagenda') }}">
                 <i class="ni ni-calendar-grid-58   text-orange"></i>
                 <span class="nav-link-text">Agendamento</span>
               </a>
@@ -55,7 +55,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('site.orcamento') }}">
+              <a class="nav-link" href="{{ route('site.listaorcamento') }}">
                 <i class="ni ni-cart text-pink"></i>
                 <span class="nav-link-text active">Orçamentos</span>
               </a>
@@ -338,30 +338,18 @@
               <form action="{{route('site.update',$agendamento->id)}}" method="post">
                 @method("put")
                 @csrf
-                <h6 class="heading-small text-muted mb-4">Informações do veículo</h6>
+                <h6 class="heading-small text-muted mb-4">Solicitação</h6>
                 <div class="pl-lg-4">
-                  <div class="row">
-                    <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-username">Modelo</label>
                         <select class="form-control" name="veiculo_id" id="veiculo_id" value="{{old('veiculo_id')}}">
                         @foreach($veiculos as $veiculo)
                           <option value="{{$veiculo->id}}">{{$veiculo->Modelo}} </option>
                         @endforeach
+                        </select>
                       </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="form-group">
-                        <label class="form-control-label">Marca</label>
-                        <input type="text" id="input-email" class="form-control" placeholder="Honda" value="">
-                      </div>
-                    </div>
-                  </div>
                   
                 </div>
-                <hr class="my-4" />
-                <!-- Address -->
-                <h6 class="heading-small text-muted mb-4">Solicitação</h6>
                 <div class="pl-lg-4">
                 <div class="form-group">
                       <label for="example-date-input" class="form-control-label">Data</label>

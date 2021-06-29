@@ -10,12 +10,7 @@ use App\Models\Veiculo;
 
 class AgendamentoController extends Controller
 {
-    public function login(){
-        return view('admin.site.examples.login');
-    }
-    public function dashboard(){
-        return view('admin.site.examples.dashboard');
-    }
+    
     public function orcamento(){
         $veiculos= Veiculo::get();
         return view('admin.site.examples.orcamento',compact('veiculos'));

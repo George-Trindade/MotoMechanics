@@ -61,7 +61,8 @@
       <div class="row">
         <div class="col-lg-4 col-md-6 ml-auto mr-auto">
           <div class="card card-login">
-            <form class="form" method="" action="">
+            <form class="form" method="post" action="{{route('site.loginuser')}}">
+              <input type="hidden" name="_token" value="{{csrf_token()}}">
               <div class="card-header card-header-primary text-center">
               <!--<img src="http://aula.test/assets/img/motocicleta.png" width="75" height="75"> -->
                 <h4 class="card-title">Login</h4>
@@ -85,15 +86,7 @@
                       <i class="material-icons"></i>
                     </span>
                   </div>
-                  <input type="text" class="form-control" placeholder="Primeiro Nome...">
-                </div>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <i class="material-icons"></i>
-                    </span>
-                  </div>
-                  <input type="email" class="form-control" placeholder="Email...">
+                  <input type="email" class="form-control" name='email' id='email' placeholder="Email...">
                 </div>
                 <div class="input-group">
                   <div class="input-group-prepend">
@@ -101,11 +94,13 @@
                       <i class="material-icons">  </i>
                     </span>
                   </div>
-                  <input type="password" class="form-control" placeholder="Senha...">
+                  <input type="password" class="form-control" name='password' id='password' placeholder="Senha...">
                 </div>
               </div>
               <div class="footer text-center">
-                <a href="{{route('site.dashboard')}}" class="btn btn-primary btn-link btn-wd btn-lg">Entrar</a>
+                <a href="{{route('site.dashboard')}}" class="btn btn-primary btn-link btn-wd btn-lg">
+                <button type="submit"class="btn btn-primary btn-sm" style="background-color: #0a080a;">Entrar</button>
+                </a>
               </div>
             </form>
           </div>

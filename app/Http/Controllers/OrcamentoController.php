@@ -11,7 +11,7 @@ class OrcamentoController extends Controller
     
     public function storeOrca(Request $request){
         $orcamento= Orcamento::create($request->all());
-        return redirect()->route('site.meusservicos');
+        return redirect()->route('site.listaorcamento');
     }    
     public function meusservicos(){
         return view('admin.site.examples.meusservicos');
@@ -25,12 +25,12 @@ class OrcamentoController extends Controller
     public function destroyorcamento($id){
         $orcamento = Orcamento::find($id);
         $orcamento->delete();
-        return redirect()->route('site.meusservicos');
+        return redirect()->route('site.listaorcamento');
     }
     public function editaorcamento($id){
         $orcamento= Orcamento::find($id);
         if(!$orcamento){
-            return redirect()->route('site.meusservicos');
+            return redirect()->route('site.listaorcamento');
         }
         return view('admin.site.examples.editaorcamento',compact('orcamento'));
     }

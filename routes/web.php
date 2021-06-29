@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\{AgendamentoController};
 use App\Http\Controllers\{OrcamentoController};
+use App\Http\Controllers\{AuthController};
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -9,8 +10,9 @@ Route::get('/', function () {
 });
 
 Route::post('/');
-Route::get('/site/examples/login',[AgendamentoController::class,'login'])->name('site.login');
-Route::get('/site/examples/dashboard',[AgendamentoController::class,'dashboard'])->name('site.dashboard');
+Route::get('/site/examples/login',[AuthController::class,'login'])->name('site.login');
+Route::get('/site/examples/dashboard',[AuthController::class,'dashboard'])->name('site.dashboard');
+Route::post('/site/examples/login/loginuser',[AuthController::class,'loginuser'])->name('site.loginuser');
 Route::get('/site/examples/orcamento',[AgendamentoController::class,'orcamento'])->name('site.orcamento');
 Route::get('/site/examples/agendamento',[AgendamentoController::class,'agendamento'])->name('site.agendamento');
 Route::post('/site/examples', [AgendamentoController::class, 'store'])->name('site.store');
